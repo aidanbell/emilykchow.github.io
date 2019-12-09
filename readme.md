@@ -46,7 +46,7 @@ Description:
 Blackjack is a card game which the objective is to have a higher hand than the dealer while also not going over a total of 21. An ace and a face card/ten is a Blackjack because they add up to 21 points. Ace can be either one or eleven points.
 
 How to play:
-When you first get to the page, a box will pop up asking you how much money you would like to start off with, default is \$100.
+When you first get to the page, a box will pop up asking you how much money you would like to start off with, default is one hundred dollars.
 <img src="https://i.imgur.com/8mBAgMz.png">
 
 After you press "OK", then click "Start", another box will pop up asking you how much money you would like to bet, after when you have entered your amount and then pressed "OK", the game will start.
