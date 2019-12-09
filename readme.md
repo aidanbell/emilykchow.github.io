@@ -63,7 +63,7 @@ HTML, CSS, Javascript
 
 Getting started:
 To play this game, click on the link here:
-https://github.com/emilykchow/blackjack
+[Blackjack](emilykchow.github.io)
 
 Next Steps:
 Dealer's side can decide whether to stand or hit, because right now the dealer will always hit if it the total is under 21, and lower than the player's card.
