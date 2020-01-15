@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Edit <%= grocerylist.name %></title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <!-- Compiled and minified JavaScript -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class ="#80cbc4 teal lighten-3">
+    <h1><%= title %></h1>
+    </div>
+    <form action="/grocerylist/<%= grocerylist._id %>" method="post">
+      <input name="name" value="<%= grocerylist.name %>" />
+      <button type="submit">Edit</button>
+    </form>
+    <h3>Items in Grocery List:</h3>
+    <table>
+      <% if(grocerylist.groceryItems.length === 0) { %>
+        <div>
+          <hr />
+          There is no grocery item.
+        </div>
+        <% } else { %>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+    
+          <% grocerylist.groceryItems.forEach(function(item, index){ %>
+          <tr>
+            <td>
+              <%= item.name %>
+            </td>
+            <td>
+              $<%= item.price %>
+            </td>
+            <td>
+              <a href="/grocery/<%= item._id %>/">Remove</a>
+            </td>
+          </tr>
+          <% }); } %>
+    </table>
+  </br>
+  </br>
+    <h3>Add Items in Grocery List</h3> 
+    <hr />
+    <table>
+      <% if(groceries.length === 0) { %>
+        <div>
+          <hr />
+          There is no grocery item.
+        </div>
+        <% } else { %>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+    
+          <% groceries.forEach(function(groceryItem){ %>
+          <tr>
+            <td>
+              <%= groceryItem.name %>
+            </td>
+            <td>
+              $<%= groceryItem.price %>
+            </td>
+            <td>
+              <form action="/grocery/grocerylist/<%= grocerylist._id %>/addgrocery" method="post">
+                <button name="groceryId" value="<%= groceryItem._id %>" type="submit">Add</button>
+              </form>
+            </td>
+          </tr>
+          <% }); } %>
+    </table>
+    <br>
+    <a class="waves-effect waves-light btn-large" a href="/grocery"
+    >Click here to Add/Edit/Delete Grocery Items</a>
+  </body>
+</html>

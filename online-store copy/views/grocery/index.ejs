@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List of Grocery Items</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="#80cbc4 teal lighten-3">
+      <h1>List of Grocery Items</h1>
+    </div>
+    <form action="/grocery" method="post">
+      <input name="name" placeholder="Enter Grocery Name" />
+      <input type="number" name="price" placeholder="Price" />
+      <button type="submit">Add Item</button>
+    </form>
+    <% if(groceries.length === 0) { %>
+    <div>
+      <hr />
+      There is no grocery item.
+    </div>
+    <% } else { %>
+    <table>
+      <tr>
+        <th>Item Name</th>
+        <th>Item Price</th>
+        <th>Actions</th>
+      </tr>
+
+      <% groceries.forEach(function(groceryItem){ %>
+      <tr>
+        <td>
+          <%= groceryItem.name %>
+        </td>
+        <td>
+          $<%= groceryItem.price %>
+        </td>
+        <td>
+          <a href="/grocery/<%= groceryItem._id %>/">Edit</a>
+          <a href="/grocery/delete/<%= groceryItem._id %>">Delete</a>
+        </td>
+      </tr>
+      <% }); } %>
+    </table>
+
+    <br />
+    <a class="waves-effect waves-light btn-large" a href="/grocerylist"
+      >Click here to view your grocery lists</a
+    >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

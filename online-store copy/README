@@ -1,0 +1,24 @@
+SEI Grocery List
+
+
+Description: This webapp allows the user to make multiple grocery lists for different recipes and different occasions.
+
+To get started, user will first go to localhost:3000.
+<img src="https://imgur.com/zWKiUEn">
+
+The index page will prompt the user to click on a button to get started with adding groceries.
+<img src="https://imgur.com/832theo">
+
+When the user is done adding groceries, they can click on the button that directs them to the grocery lists page at localhost:3000/grocerylist
+
+When the user gets to the grocery list page, they can create a new grocery list. 
+<img src="https://imgur.com/Pu0NFMp">
+
+
+If the user wants to edit/add/delete the grocery lists and items, they will be able to do so by clicking onto the specific grocery list and clicking the button below.
+<img src="https://imgur.com/XXYmII7">
+
+
+Technologies used: Node JS, CSS, EJS, JSON, Mongoose, MongoDB, Express
+
+Next steps: To make the page better looking, as well as add the total of the items in a grocery list.

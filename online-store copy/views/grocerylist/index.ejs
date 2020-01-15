@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="#80cbc4 teal lighten-3">
+      <h1><%= title %></h1>
+    </div>
+    <form action="/grocerylist" method="post">
+      <input name="name" />
+      <button type="submit">Create</button>
+    </form>
+    <% if(groceryLists.length === 0) { %>
+    <div>
+      <hr />
+      There is no grocery list.
+    </div>
+    <% } else { %>
+    <table>
+      <tr>
+        <th>List Name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% groceryLists.forEach(function(groceryList){ %>
+      <tr>
+        <td>
+          <%= groceryList.name %>
+        </td>
+        <td>
+          <a href="/grocerylist/<%= groceryList._id %>/">Edit</a>
+          <a href="/grocerylist/delete/<%= groceryList._id %>">Delete</a>
+        </td>
+      </tr>
+
+      <% }); } %>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

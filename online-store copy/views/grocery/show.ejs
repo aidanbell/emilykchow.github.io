@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Edit <%= grocery.name %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="#80cbc4 teal lighten-3">
+      <h1>Details</h1>
+    </div>
+    <p>Name: <%= grocery.name %></p>
+    <p>Price: $<%= grocery.price %></p>
+    <form action="/grocery/<%= grocery._id %>" method="post">
+      <input name="name" value="<%= grocery.name %>" />
+      <input type="number" name="price" value="<%= grocery.price %>" />
+      <button type="submit">Done</button>
+    </form>
+    <div>
+      <hr />
+    </div>
+
+    <a class="waves-effect waves-light btn-large" a href="/grocery"
+      >Click here to see all your grocery items</a
+    >
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+  </body>
+</html>
